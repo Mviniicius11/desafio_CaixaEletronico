@@ -4,7 +4,16 @@ public class Clientes {
 
     private String nome;
     private String tipoConta;
+    private int numeroConta;
     private double saldo;
+
+//    public int getNumeroConta() {
+//        return numeroConta;
+//    }
+
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
+    }
 
     public double getSaldo() {
         return saldo;

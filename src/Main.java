@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
 
         Clientes cliente1 = new Clientes();
@@ -14,15 +15,17 @@ public class Main {
 
         Scanner leitura = new Scanner(System.in);
 
+        //Clientes
+
         cliente1.setNome("Jacqueline Oliveira");
         cliente1.setTipoConta("Corrente");
+        cliente1.setNumeroConta(123456);
         cliente1.setSaldo(4600);
-        double saldo = cliente1.getSaldo();
+
         int opcao = 0;
         int exit;
 
         mensagens.exibeTelaInicial(cliente1.getNome(), cliente1.getTipoConta(), cliente1.getSaldo());
-
 
         while (opcao != 4) {
             mensagens.exibeMenu();
@@ -42,11 +45,11 @@ public class Main {
 
 
             } else if (opcao == 2) {
-                System.out.println("Informe o valor a receber: ");
+                System.out.println("\nInforme o valor a receber: \n");
                 double valor = leitura.nextDouble();
                 cliente1.setSaldo(cliente1.getSaldo() + valor);
 
-                System.out.println("Saldo atualizado R$ %.2f\n".formatted(cliente1.getSaldo()));
+                operacoes.exibeSaldo(cliente1.getSaldo());
 
                 mensagens.exibeMensagemNovaOperacao();
                 exit = leitura.nextInt();
@@ -58,7 +61,7 @@ public class Main {
 
             } else if (opcao == 3) {
 
-                System.out.println("Informe o valor que deseja transferir: ");
+                System.out.println("\nInforme o valor que deseja transferir: \n");
                 double valor = leitura.nextDouble();
 
                 if (cliente1.getSaldo() < valor) {
@@ -85,7 +88,7 @@ public class Main {
                 mensagens.exibeMensagemSaida();
 
             } else {
-                System.out.println("Opção inválida\n");
+                mensagens.exibeOpcaoInvalida();
             }
         }
     }

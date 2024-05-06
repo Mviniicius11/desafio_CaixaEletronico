@@ -1,11 +1,6 @@
 package caixaeletronico.mensagens;
 
-import java.util.Scanner;
-
 public class Mensagens {
-
-
-    Scanner leitura = new Scanner(System.in);
 
 
     public void exibeMensagemNovaOperacao() {
@@ -20,22 +15,16 @@ public class Mensagens {
     }
 
 
-    public void exibeMensagemSaida() {
-        System.out.println("Obrigado por utilizar nosso serviços. \nVolte sempre!");
-    }
-
-
     public void exibeTelaInicial(String nome, String tipoConta, double saldo) {
 
         System.out.println("""
-                **************************
-                Dados iniciais do cliente:
+                *************************************
+                Dados do cliente:
 
                 Nome: %s
                 Tipo conta: %s
-                Saldo: R$ %.2f
-                **************************
-
+                Saldo: R$ %.2f                
+                *************************************
                 """.formatted(nome, tipoConta, saldo));
     }
 
@@ -56,7 +45,24 @@ public class Mensagens {
 
 
     public void exibeSaldoInsuficiente(){
-        System.out.println("Não há saldo suficiente para fazer essa transferência.\n");
+        System.out.println("\nNão há saldo suficiente para fazer essa transferência.\n");
+    }
+
+    public void exibeClienteNaoLocalizado(){
+        System.out.println("\nNúmero de conta não localizada! \n");
+    }
+
+    public void exibeOpcaoInvalida() {
+        System.out.println("\nOpção inválida\n");
+    }
+
+    public void exibeMensagemSaida() {
+        System.out.println("""
+        
+        Sessâo encerrada!
+        Obrigado por utilizar nosso serviços.
+        *************************************
+        """);
     }
 }
 
